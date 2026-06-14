@@ -1,8 +1,8 @@
-# Artigo Tutorial — Construindo um Jogo Sonoro de Animais com Arduino e RFID
+# Artigo Tutorial — Construindo o 'Cadê o Bicho?'
 
 ## Introdução
 
-Este tutorial apresenta, passo a passo, como construir um **jogo sonoro educativo** para crianças, no qual figuras de animais (Fazenda, Zoológico e Aquário) são identificadas por tags RFID. Ao aproximar a figura correta de um leitor, o sistema toca o som daquele animal; ao errar, toca um som de "tente novamente".
+Este tutorial apresenta, passo a passo, como construir o jogo **Cadê o Bicho?**, jogo sonoro educativo para crianças cegas, no qual figuras de animais (Fazenda, Zoológico e Aquário) são identificadas por tags RFID. Ao aproximar a figura correta do leitor, o sistema toca o som daquele animal; ao errar, toca um som de "tente novamente".
 
 O objetivo é que qualquer pessoa com conhecimentos básicos de Arduino consiga **reproduzir o protótipo do zero**, entendendo cada etapa da montagem, da programação e da preparação dos áudios.
 
@@ -31,7 +31,7 @@ O objetivo é que qualquer pessoa com conhecimentos básicos de Arduino consiga 
 
 Antes de montar qualquer coisa, vale entender o "fluxo" do programa:
 
-1. Ao ligar, o sistema toca um áudio de boas-vindas e espera o usuário escolher um ambiente.
+1. Ao ligar, o sistema toca um áudio de boas-vindas, apresenta o jogo e espera o usuário escolher um ambiente.
 2. Ao escolher um ambiente (Fazenda, Zoológico ou Aquário), o sistema "carrega" o primeiro dos 5 animais daquele ambiente e toca o som dele.
 3. O usuário aproxima uma figura/tag do leitor RFID.
 4. O sistema compara o UID lido com o UID esperado:
@@ -192,15 +192,6 @@ O DFPlayer Mini, com o comando `playMp3Folder(N)`, procura arquivos dentro de um
 | Áudio não toca, mas não dá erro no setup | Pasta `mp3` com nome incorreto (deve ser minúsculo) ou arquivos com numeração errada |
 | Volume não muda | Verificar ligação do potenciômetro ao pino A0 |
 | Botão não responde ou responde várias vezes | Verificar se está ligado ao GND corretamente (uso de `INPUT_PULLUP`) |
-
----
-
-## 11. Próximos passos e personalizações
-
-- Trocar os animais por outros temas (ex.: instrumentos musicais, letras do alfabeto, números).
-- Gravar os áudios de "nome" de cada animal e ativar o campo `audioNome` no código para anunciar o nome antes do som.
-- Adicionar indicadores visuais (LEDs) para feedback de acerto/erro.
-- Criar uma caixa/estrutura física para acomodar os componentes e proteger o circuito.
 
 ---
 
