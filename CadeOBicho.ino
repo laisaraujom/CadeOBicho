@@ -13,7 +13,7 @@ const int BTN_ZOOLOGICO = 25;
 const int BTN_AQUARIO   = 27;
 const int BTN_PAUSE     = 29;
 const int BTN_REBOBINAR = 31;
-const int BTN_ON_OFF    = 33; // Novo botão de Ligar/Desligar
+const int BTN_ON_OFF    = 33; 
 const int POT_VOLUME    = A0;
 
 MFRC522 rfid(SS_PIN, RST_PIN);
@@ -27,7 +27,7 @@ struct Animal {
 };
 
 // Variáveis de controle
-bool sistemaLigado = true; // O sistema começa ligado por padrão
+bool sistemaLigado = true; 
 bool jogoAtivo = false;
 bool pausado = false;
 int volumeAtual = -1;
@@ -87,11 +87,11 @@ void setup() {
   pinMode(BTN_AQUARIO, INPUT_PULLUP);
   pinMode(BTN_PAUSE, INPUT_PULLUP);
   pinMode(BTN_REBOBINAR, INPUT_PULLUP);
-  pinMode(BTN_ON_OFF, INPUT_PULLUP); // Configura o novo botão como entrada interna pull-up
+  pinMode(BTN_ON_OFF, INPUT_PULLUP); 
 
   atualizarVolume();
 
-  player.playMp3Folder(1); // 0001.mp3 - Áudio de introdução/boas-vindas
+  player.playMp3Folder(1); 
   Serial.println("Pronto!");
 }
 
@@ -99,10 +99,10 @@ void setup() {
 // LOOP
 // =====================================================
 void loop() {
-  verificarBotaoOnOff(); // Sempre verifica o botão de ligar/desligar
+  verificarBotaoOnOff(); 
 
   if (!sistemaLigado) {
-    return; // Se o sistema estiver desligado, ignora o resto do loop
+    return; 
   }
 
   atualizarVolume();
@@ -119,14 +119,14 @@ void loop() {
 
 void verificarBotaoOnOff() {
   if (digitalRead(BTN_ON_OFF) == LOW) {
-    sistemaLigado = !sistemaLigado; // Inverte o estado atual do sistema
+    sistemaLigado = !sistemaLigado; 
 
     if (!sistemaLigado) {
       // Ações ao DESLIGAR
       Serial.println("Sistema Desligado.");
-      player.stop(); // Para qualquer música imediatamente
+      player.stop(); 
       
-      // Reseta as variáveis do jogo
+
       jogoAtivo = false;
       pausado = false;
       ambienteAtivo = 0;
@@ -134,10 +134,10 @@ void verificarBotaoOnOff() {
     } else {
       // Ações ao LIGAR novamente
       Serial.println("Sistema Ligado.");
-      player.playMp3Folder(1); // Toca o áudio inicial novamente (opcional)
+      player.playMp3Folder(1); 
     }
 
-    delay(500); // Debounce para evitar múltiplos cliques fantasmas
+    delay(500); 
   }
 }
 
