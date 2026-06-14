@@ -2,7 +2,7 @@
 
 Protótipo educativo baseado em Arduino que utiliza tags **RFID** e um módulo de áudio **DFPlayer Mini** para criar um jogo sonoro interativo: a criança escolhe um ambiente (Fazenda, Zoológico ou Aquário) e precisa encontrar, entre as figuras de animais, aquela que corresponde ao som tocado, aproximando-a do leitor RFID.
 
-> 📁 Este repositório contém: imagens do protótipo (`/imagens`), o código-fonte (`/codigo`), o esquema de ligações (`/esquematico`), este README e o [Artigo Tutorial](ARTIGO_TUTORIAL.md) com o passo a passo completo de reprodução.
+> 📁 Este repositório contém: imagens do protótipo, o [código-fonte](CadeOBicho.ino), o [esquema de ligações](esquema_ligacoes.svg), este README e o [Artigo Tutorial](ARTIGO_TUTORIAL.md) com o passo a passo completo de reprodução.
 
 ---
 
