@@ -198,11 +198,17 @@ Ao identificar corretamente os 5 animais de um ambiente, toca-se um áudio de fi
 
 > 📸 Fotos do produto final
 
-<img width="480" height="853" alt="1781183445276" src="https://github.com/user-attachments/assets/9796492e-c7f7-4419-83cd-497cd2d2e1e8" />
-<img width="480" height="1040" alt="1781183445038" src="https://github.com/user-attachments/assets/269771c4-d38c-455d-8821-b556a015c479" />
-<img width="480" height="1039" alt="jogo" src="https://github.com/user-attachments/assets/75b5de73-3e32-4bb5-8af8-5753024b590d" />
-<img width="739" height="1600" alt="WhatsApp Image 2026-06-14 at 20 21 44" src="https://github.com/user-attachments/assets/8f210da7-4de8-47f2-9d7c-4caf5604dfd0" />
-<img width="739" height="1600" alt="WhatsApp Image 2026-06-14 at 20 21 43" src="https://github.com/user-attachments/assets/f53990d3-4727-472e-8f3b-84da3ae63c09" />
+
+<table>
+  <tr>
+    <td><img src="[URL_DA_FOTO_1](https://github.com/user-attachments/assets/269771c4-d38c-455d-8821-b556a015c479)" width="100%" alt="Descrição 1"></td>
+    <td><img src="[URL_DA_FOTO_2](https://github.com/user-attachments/assets/75b5de73-3e32-4bb5-8af8-5753024b590d)" width="100%" alt="Descrição 2"></td>
+  </tr>
+  <tr>
+    <td><img src="[URL_DA_FOTO_3](https://github.com/user-attachments/assets/8f210da7-4de8-47f2-9d7c-4caf5604dfd0)" width="100%" alt="Descrição 3"></td>
+    <td><img src="[URL_DA_FOTO_4](https://github.com/user-attachments/assets/f53990d3-4727-472e-8f3b-84da3ae63c09)" width="100%" alt="Descrição 4"></td>
+  </tr>
+</table>
 
 ---
 
