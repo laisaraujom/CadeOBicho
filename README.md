@@ -24,7 +24,7 @@ Protótipo educativo baseado em Arduino que utiliza tags **RFID** e um módulo d
 
 ## Visão geral
 
-- Um **leitor RFID (MFRC522)** identifica tags coladas em figuras de animais.
+- Um **leitor RFID (MFRC522)** identifica tags coladas em figuras de animais, impressos em 3D e texturizados pela equipe.
 - Um **DFPlayer Mini** toca arquivos MP3 de um cartão microSD: nome/som de cada animal, mensagens de acerto/erro e finalização de cada ambiente.
 - **3 botões** selecionam o ambiente (Fazenda, Zoológico, Aquário).
 - **1 botão** pausa/retoma o áudio, **1 botão** repete o som do animal atual e **1 botão** liga/desliga todo o sistema.
@@ -38,12 +38,12 @@ Cada ambiente tem 5 animais. Ao acertar o animal correto, o jogo avança automat
 
 | Item | Observação |
 |---|---|
-| Arduino Mega 2560 | Necessário porque o código usa `Serial3` (disponível apenas em placas com mais de uma porta serial de hardware) |
+| Arduino Mega 2560 | 
 | Módulo leitor RFID MFRC522 | Opera em 3.3V — **não ligar em 5V** |
 | Tags/cartões RFID (mínimo 15) | Uma para cada animal (5 por ambiente x 3 ambientes) |
 | Módulo DFPlayer Mini | + cartão microSD (até 32GB, formatado em FAT16/FAT32) |
 | Alto-falante 3–8 Ω, até 3W | Conectado ao DFPlayer |
-| 6x botões (push button) | Seleção de ambiente, pause, rebobinar e liga/desliga |
+| 6x botões (push button) | Seleção de ambiente (3x), pause, rebobinar e liga/desliga |
 | 1x potenciômetro 10kΩ | Controle de volume |
 | Resistor 1kΩ | Recomendado na linha RX do DFPlayer (protege o pino do Arduino) |
 | Protoboard e jumpers | Para montagem |
@@ -142,12 +142,6 @@ SD_CARD/
     └── 0038.mp3 / 0039.mp3 → Foca (nome / som)
 ```
 
-> ⚠️ Os arquivos `0007.mp3`, `0008.mp3` e `0009.mp3` não são usados pelo código atual, mas podem ser reservados para futuras mensagens (ex: instruções de início de cada ambiente).
->
-> ⚠️ Atualmente, ao apresentar cada animal o código toca apenas o **som** (`audioSom`). O campo `audioNome` existe na estrutura de dados, mas não é usado em nenhuma chamada — ou seja, os arquivos "nome" podem ser gravados para uso futuro, mas não são obrigatórios para o funcionamento atual.
-
----
-
 ## Identificando as tags RFID dos animais
 
 Cada tag precisa ter seu UID (4 bytes) cadastrado no código, no array correspondente (`fazenda[]`, `zoologico[]` ou `aquario[]`).
@@ -202,14 +196,18 @@ Ao identificar corretamente os 5 animais de um ambiente, toca-se um áudio de fi
     └── (fotos do protótipo montado, vídeo/gif de demonstração, etc.)
 ```
 
-> 📸 Adicione aqui fotos do protótipo montado, da caixa/estrutura física, das figuras dos animais com as tags coladas, e — se possível — um GIF/vídeo curto do jogo em funcionamento.
+> 📸 Fotos do produto final
+
+<img width="480" height="853" alt="1781183445276" src="https://github.com/user-attachments/assets/9796492e-c7f7-4419-83cd-497cd2d2e1e8" />
+<img width="480" height="1040" alt="1781183445038" src="https://github.com/user-attachments/assets/269771c4-d38c-455d-8821-b556a015c479" />
+<img width="480" height="1039" alt="jogo" src="https://github.com/user-attachments/assets/75b5de73-3e32-4bb5-8af8-5753024b590d" />
+<img width="739" height="1600" alt="WhatsApp Image 2026-06-14 at 20 21 44" src="https://github.com/user-attachments/assets/8f210da7-4de8-47f2-9d7c-4caf5604dfd0" />
+<img width="739" height="1600" alt="WhatsApp Image 2026-06-14 at 20 21 43" src="https://github.com/user-attachments/assets/f53990d3-4727-472e-8f3b-84da3ae63c09" />
 
 ---
 
 ## Possíveis melhorias futuras
 
-- Utilizar o campo `audioNome` (atualmente não chamado) para anunciar o nome do animal antes do desafio.
-- Aproveitar os números de faixa `0007–0009`, hoje livres, para instruções de início de cada ambiente.
 - Adicionar um indicador visual (LED) de "ligado/desligado" e de "acerto/erro".
 - Salvar o progresso (ambiente e índice do animal) em memória não-volátil (EEPROM), permitindo continuar de onde parou após desligar.
 
