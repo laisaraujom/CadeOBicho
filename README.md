@@ -1,4 +1,4 @@
-# 🐾 Jogo Sonoro de Animais — Fazenda, Zoológico e Aquário
+# 🐾 Cadê o Bicho?
 
 Protótipo educativo baseado em Arduino que utiliza tags **RFID** e um módulo de áudio **DFPlayer Mini** para criar um jogo sonoro interativo: a criança escolhe um ambiente (Fazenda, Zoológico ou Aquário) e precisa encontrar, entre as figuras de animais, aquela que corresponde ao som tocado, aproximando-a do leitor RFID.
 
